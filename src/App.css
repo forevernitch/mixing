@@ -11,7 +11,7 @@ html {
 
 h1 {
   padding: .90rem 0;
-  background-color: #010c3f;
+  background-color: #461072;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 3rem;
@@ -19,7 +19,7 @@ h1 {
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color: #ff1ca8;
 }
 
 h2 {
@@ -31,7 +31,7 @@ h2 {
   height: 100%;
   padding: 0 17% 10% 17%;
   background-color: black;
-  background-image: url('https://s3.amazonaws.com/codecademy-content/programs/react/jammming/background_photo_desktop.jpg');
+  background-image: url('https://images.pexels.com/photos/2952834/pexels-photo-2952834.jpeg?cs=srgb&dl=silhouette-photo-of-people-beside-monitor-2952834.jpg&fm=jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,13 +41,15 @@ h2 {
 }
 
 .App-playlist {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
+  flex-direction: row;
   width: 100%;
 }
 
 @media only screen and (max-width: 1020px) {
   .App-playlist {
+    display: inline-flex;
     align-items: center;
     flex-direction: column;
   }

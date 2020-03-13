@@ -1,6 +1,3 @@
-
-
-
 const clientID = "aa9c682c20c84a5fbe9a829bfb21b8b5";
 const clientSecret = "2b4adf40ca5d45e48059fedd3bc719fa";
 let accessToken = "";
