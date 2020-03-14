@@ -34,20 +34,20 @@ class App extends React.Component {
     this.setState({ playlistName: name });
   }
 
-  //This method should return a filtered array of the objects that did not match that id
+  //Method will return a filtered array of all tracks that are not equal to the provided ID
   removeTrack(track) {
-    const removed = this.state.playlistTracks.filter(current => {
-      return current.id !== track.id;
+    const upadatedRemoved = this.state.playlistTracks.filter(currentTrack => {
+      return currentTrack.id !== track.id;
     });
-    this.setState({ playlistTracks: removed });
+    this.setState({ playlistTracks: upadatedRemoved });
   }
 
-  //Will check a condition if met then it will concatinate the array with new object
+  //Method will set the state including the track passed as a parameter if it is not found
   addTrack(track) {
-    const found = this.state.playlistTracks.some(
+    const found = this.state.playlistTracks.find(
       current => current.id === track.id
     );
-    if (!found) {
+    if (found === undefined) {
       this.setState({
         playlistTracks: [...this.state.playlistTracks, track]
       });
@@ -55,11 +55,12 @@ class App extends React.Component {
   }
 
   savePlaylist() {
+    //Will receive the track URIs and make an array of them from playlistTracks
     const trackURIs = [];
   }
 
   search(value) {
-    console.log(value);
+    Spotify.getAccessToken();
   }
 
   render() {
@@ -69,7 +70,8 @@ class App extends React.Component {
           mi<span className="highlight">x</span>ing
         </h1>
         <div className="App">
-          <SearchBar onSearch={this.search} />
+          <SearchBar 
+            onSearch={this.search} />
           <div className="App-playlist">
           <SearchResults
             onAdd={this.addTrack}
