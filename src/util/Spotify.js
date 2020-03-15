@@ -12,7 +12,7 @@ const Spotify = {
     if(accessToken!==""){
       return accessToken;
     }
-    else{
+    if(window.location.href){
       window.location.href="https://accounts.spotify.com/authorize?client_id="+clientID+"&redirect_uri="+redirectURI+"&scope="+scopes+"&response_type=token&state=123"
       accessToken = window.location.href.match(/access_token=([^&]*)/)[1]
       expTime = window.location.href.match(/expires_in=([^&]*)/)[1]
